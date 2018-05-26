@@ -1,0 +1,12 @@
+{
+  "namespace": "io.zeelos.leshan.avro.resource",
+  "type": "enum",
+  "name": "AvroResourceKind",
+  "symbols": [
+    "OBJECT",
+    "INSTANCE",
+    "MULTIPLE_RESOURCE",
+    "SINGLE_RESOURCE"
+  ],
+  "doc" : "Represents the resource kind."
+}

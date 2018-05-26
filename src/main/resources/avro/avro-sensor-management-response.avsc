@@ -1,0 +1,32 @@
+{
+  "namespace": "io.zeelos.leshan.avro.response",
+  "name": "AvroResponse",
+  "type": "record",
+  "fields": [
+    {
+      "name": "ticket",
+      "type": "string"
+    },
+    {
+      "name": "serverId",
+      "type": "string"
+    },
+    {
+      "name": "ep",
+      "type": "string"
+    },
+    {
+      "name": "path",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "rep",
+      "type": "io.zeelos.leshan.avro.response.AvroResponsePayload"
+    }
+  ],
+  "doc": "Represents the management response payload."
+}

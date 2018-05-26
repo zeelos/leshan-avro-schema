@@ -1,0 +1,24 @@
+{
+  "namespace": "io.zeelos.leshan.avro.registration",
+  "name": "AvroRegistrationDelete",
+  "type": "record",
+  "fields": [
+    {
+      "name": "ep",
+      "type": "string"
+    },
+    {
+      "name": "serverId",
+      "type": "string"
+    },
+    {
+      "name": "expired",
+      "type": "boolean"
+    },
+    {
+      "name": "lastUp",
+      "type": "long"
+    }
+  ],
+  "doc" : "Represents a registration delete."
+}

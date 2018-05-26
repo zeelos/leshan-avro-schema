@@ -1,0 +1,12 @@
+{
+  "namespace": "io.zeelos.leshan.avro",
+  "name": "AvroKey",
+  "type": "record",
+  "fields": [
+    {
+      "name": "ep",
+      "type": "string"
+    }
+  ],
+  "doc" : "Represents the topic key, currently includes only the endpoint id."
+}

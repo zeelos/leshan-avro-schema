@@ -1,0 +1,15 @@
+{
+  "namespace": "io.zeelos.leshan.avro.resource",
+  "type": "enum",
+  "name": "AvroType",
+  "symbols": [
+    "STRING",
+    "FLOAT",
+    "INTEGER",
+    "BOOLEAN",
+    "OPAQUE",
+    "TIME",
+    "OBJLNK"
+  ],
+  "doc" : "Represents the resource type."
+}

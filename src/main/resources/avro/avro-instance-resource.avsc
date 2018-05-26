@@ -1,0 +1,34 @@
+{
+  "namespace": "io.zeelos.leshan.avro.resource",
+  "name": "AvroInstanceResource",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "kind",
+      "type": "io.zeelos.leshan.avro.resource.AvroResourceKind"
+    },
+    {
+      "name": "resources",
+      "type": {
+        "type": "array",
+        "items": "io.zeelos.leshan.avro.resource.AvroResource"
+      }
+    },
+    {
+      "name": "multipleResources",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "io.zeelos.leshan.avro.resource.AvroMultipleResource"
+        }
+      ],
+      "default": null
+    }
+  ],
+  "doc" : "Represents the resource instance."
+}

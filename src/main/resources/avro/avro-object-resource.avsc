@@ -1,0 +1,23 @@
+{
+  "namespace": "io.zeelos.leshan.avro.resource",
+  "name": "AvroObjectResource",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "kind",
+      "type": "io.zeelos.leshan.avro.resource.AvroResourceKind"
+    },
+    {
+      "name": "instances",
+      "type": {
+        "type": "array",
+        "items": "io.zeelos.leshan.avro.resource.AvroInstanceResource"
+      }
+    }
+  ],
+  "doc" : "Represents an object."
+}

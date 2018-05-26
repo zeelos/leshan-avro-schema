@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.zeelos.leshan.avro</groupId>
+    <artifactId>leshan-avro-schema</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>leshan-avro-schema</name>
+    <description>The Avro schema for the Leshan LWM2M model.</description>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>cvasilak</id>
+            <name>Christos Vasilakis</name>
+            <email>cvasilak@gmail.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <avro.version>1.8.1</avro.version>
+        <junit.version>4.11</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <stringType>String</stringType>
+                            <imports>
+                                <import>src/main/resources/avro/avro-kafka-topic-partition-key.avsc</import>
+                                <import>src/main/resources/avro/avro-request-kind.avsc</import>
+                                <import>src/main/resources/avro/avro-registration-bnd.avsc</import>
+                                <import>src/main/resources/avro/avro-registration-link.avsc</import>
+                                <import>src/main/resources/avro/avro-resource-type.avsc</import>
+                                <import>src/main/resources/avro/avro-resource-kind.avsc</import>
+                                <import>src/main/resources/avro/avro-resource.avsc</import>
+                                <import>src/main/resources/avro/avro-multiple-resource.avsc</import>
+                                <import>src/main/resources/avro/avro-instance-resource.avsc</import>
+                                <import>src/main/resources/avro/avro-object-resource.avsc</import>
+                                <import>src/main/resources/avro/avro-registration-new.avsc</import>
+                                <import>src/main/resources/avro/avro-registration-update.avsc</import>
+                                <import>src/main/resources/avro/avro-registration-delete.avsc</import>
+                                <import>src/main/resources/avro/avro-response-payload.avsc</import>
+                            </imports>
+                            <sourceDirectory>src/main/resources/avro</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <debug>true</debug>
+                    <optimize>true</optimize>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

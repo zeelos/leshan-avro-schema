@@ -1,0 +1,77 @@
+{
+  "namespace": "io.zeelos.leshan.avro.registration",
+  "name": "AvroRegistrationUpdate",
+  "type": "record",
+  "fields": [
+    {
+      "name": "ep",
+      "type": "string"
+    },
+    {
+      "name": "serverId",
+      "type": "string"
+    },
+    {
+      "name": "regId",
+      "type": "string"
+    },
+    {
+      "name": "address",
+      "type": "string"
+    },
+    {
+      "name": "port",
+      "type": "int"
+    },
+    {
+      "name": "lt",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "sms",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "bnd",
+      "type": [
+        "null",
+        "io.zeelos.leshan.avro.registration.AvroBnd"
+      ],
+      "default": null
+    },
+    {
+      "name": "links",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "io.zeelos.leshan.avro.registration.AvroLink"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "attributes",
+      "type": [
+        "null",
+         {
+           "type": "map",
+           "values": "string"
+         }],
+       "default": null
+    },
+    {
+      "name": "lastUp",
+      "type": "long"
+    }
+  ],
+  "doc" : "Represents a registration update."
+}

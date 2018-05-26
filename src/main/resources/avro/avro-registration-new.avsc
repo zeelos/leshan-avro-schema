@@ -1,0 +1,85 @@
+{
+  "namespace": "io.zeelos.leshan.avro.registration",
+  "name": "AvroRegistrationNew",
+  "type": "record",
+  "fields": [
+    {
+      "name": "ep",
+      "type": "string"
+    },
+    {
+      "name": "serverId",
+      "type": "string"
+    },
+    {
+      "name": "regDate",
+      "type": "long"
+    },
+    {
+      "name": "address",
+      "type": "string"
+    },
+    {
+      "name": "port",
+      "type": "int"
+    },
+    {
+      "name": "regAddr",
+      "type": "string"
+    },
+    {
+      "name": "regPort",
+      "type": "int"
+    },
+    {
+      "name": "lt",
+      "type": "long"
+    },
+    {
+      "name": "sms",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "ver",
+      "type": "string"
+    },
+    {
+      "name": "bnd",
+      "type": "io.zeelos.leshan.avro.registration.AvroBnd"
+    },
+    {
+      "name": "regId",
+      "type": "string"
+    },
+    {
+      "name": "links",
+      "type": {
+        "type": "array",
+        "items": "io.zeelos.leshan.avro.registration.AvroLink"
+      }
+    },
+    {
+      "name": "attributes",
+      "type": [
+        "null",
+         {
+           "type": "map",
+           "values": "string"
+         }],
+       "default": null
+    },
+    {
+      "name": "root",
+      "type": "string"
+    },
+    {
+      "name": "lastUp",
+      "type": "long"
+    }
+  ],
+  "doc" : "Represents a new registration."
+}

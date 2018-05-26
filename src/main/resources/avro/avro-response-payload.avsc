@@ -1,0 +1,98 @@
+{
+  "namespace": "io.zeelos.leshan.avro.response",
+  "type": "record",
+  "name": "AvroResponsePayload",
+  "fields": [
+    {
+      "name": "code",
+      "type": {
+        "type": "enum",
+        "name": "AvroResponseCode",
+        "symbols": [
+          "CREATED",
+          "DELETED",
+          "CHANGED",
+          "CONTENT",
+          "BAD_REQUEST",
+          "UNAUTHORIZED",
+          "METHOD_NOT_ALLOWED",
+          "FORBIDDEN",
+          "NOT_FOUND",
+          "NOT_ACCEPTABLE",
+          "REQUEST_ENTITY_INCOMPLETE",
+          "PRECONDITION_FAILED",
+          "REQUEST_ENTITY_TOO_LARGE",
+          "UNSUPPORTED_CONTENT_FORMAT",
+          "INTERNAL_SERVER_ERROR",
+          "UNKNOWN"
+        ],
+        "doc": "Represents the response code."
+      }
+    },
+    {
+      "name": "kind",
+      "type": "io.zeelos.leshan.avro.request.AvroRequestKind"
+    },
+    {
+      "name": "body",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "AvroReadResponseBody",
+          "namespace": "io.zeelos.leshan.avro.response",
+          "fields": [
+            {
+              "name": "content",
+              "type": [
+                "io.zeelos.leshan.avro.resource.AvroObjectResource",
+                "io.zeelos.leshan.avro.resource.AvroInstanceResource",
+                "io.zeelos.leshan.avro.resource.AvroResource",
+                "io.zeelos.leshan.avro.resource.AvroMultipleResource"
+              ]
+            }
+          ],
+          "doc": "Represents the body of the response."
+        },
+        {
+          "type": "record",
+          "name": "AvroDiscoverResponse",
+          "namespace": "io.zeelos.leshan.avro.response",
+          "fields": [
+            {
+              "name": "objectLinks",
+              "type": "string"
+            }
+          ],
+          "doc": "Represents a discover response."
+        },
+        {
+          "type": "record",
+          "name": "AvroCreateResponse",
+          "namespace": "io.zeelos.leshan.avro.response",
+          "fields": [
+            {
+              "name": "location",
+              "type": "string"
+            }
+          ],
+          "doc": "Represents a create response."
+        },
+        {
+          "type": "record",
+          "name": "AvroGenericResponse",
+          "namespace": "io.zeelos.leshan.avro.response",
+          "fields": [
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "doc": "Represents a generic response."
+        }
+      ],
+      "default": null
+    }
+  ],
+  "doc": "Represents a response payload."
+}

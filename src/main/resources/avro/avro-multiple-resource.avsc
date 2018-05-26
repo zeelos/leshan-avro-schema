@@ -1,0 +1,31 @@
+{
+  "namespace": "io.zeelos.leshan.avro.resource",
+  "name": "AvroMultipleResource",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "path",
+      "type": "string"
+    },
+    {
+      "name": "kind",
+      "type": "io.zeelos.leshan.avro.resource.AvroResourceKind"
+    },
+    {
+      "name": "type",
+      "type": "io.zeelos.leshan.avro.resource.AvroType"
+    },
+    {
+      "name": "resources",
+      "type": {
+        "type": "map",
+        "values": "io.zeelos.leshan.avro.resource.AvroResource"
+      }
+    }
+  ],
+  "doc" : "Represents a multiple resource."
+}

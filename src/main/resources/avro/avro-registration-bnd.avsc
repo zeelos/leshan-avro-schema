@@ -1,0 +1,14 @@
+{
+  "namespace": "io.zeelos.leshan.avro.registration",
+  "type": "enum",
+  "name": "AvroBnd",
+  "symbols": [
+    "U",
+    "UQ",
+    "S",
+    "SQ",
+    "US",
+    "UQS"
+  ],
+  "doc": "Represents the registration binding mode."
+}

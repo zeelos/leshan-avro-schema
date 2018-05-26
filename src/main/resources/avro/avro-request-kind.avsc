@@ -1,0 +1,17 @@
+{
+  "namespace": "io.zeelos.leshan.avro.request",
+  "type": "enum",
+  "name": "AvroRequestKind",
+  "symbols": [
+    "read",
+    "write",
+    "writeAttributes",
+    "execute",
+    "observe",
+    "observeCancel",
+    "delete",
+    "discover",
+    "create"
+  ],
+  "doc" : "Represents the request kind."
+}

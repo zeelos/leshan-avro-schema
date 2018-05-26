@@ -1,0 +1,126 @@
+{
+  "namespace": "io.zeelos.leshan.avro.request",
+  "name": "AvroRequest",
+  "type": "record",
+  "fields": [
+    {
+      "name": "serverId",
+      "type": "string"
+    },
+    {
+      "name": "ep",
+      "type": "string"
+    },
+    {
+      "name": "ticket",
+      "type": "string"
+    },
+    {
+      "name": "payload",
+      "type": {
+        "type": "record",
+        "name": "AvroRequestPayload",
+        "namespace": "io.zeelos.leshan.avro.request",
+        "fields": [
+          {
+            "name": "kind",
+            "type": "io.zeelos.leshan.avro.request.AvroRequestKind"
+          },
+          {
+            "name": "path",
+            "type": "string"
+          },
+          {
+            "name": "contentFormat",
+            "type": {
+              "type": "enum",
+              "name": "AvroContentFormat",
+              "namespace": "io.zeelos.leshan.avro.request",
+              "symbols": [
+                "TLV",
+                "JSON_CODE",
+                "TEXT_CODE",
+                "OPAQUE_CODE",
+                "LINK_CODE"
+              ],
+              "doc" : "Represents the content format."
+            }
+          },
+          {
+            "name": "body",
+            "type": [
+              "null",
+              {
+                "type": "record",
+                "name": "AvroCreateRequest",
+                "namespace": "io.zeelos.leshan.avro.request",
+                "fields": [
+                  {
+                    "name": "instance",
+                    "type": "io.zeelos.leshan.avro.resource.AvroInstanceResource"
+                  }
+                ],
+                "doc" : "Represents a create request."
+              },
+              {
+                "type": "record",
+                "name": "AvroExecuteRequest",
+                "namespace": "io.zeelos.leshan.avro.request",
+                "fields": [
+                  {
+                    "name": "parameters",
+                    "type": "string"
+                  }
+                ],
+                "doc" : "Represents an execute request."
+              },
+              {
+                "type": "record",
+                "name": "AvroWriteAttributesRequest",
+                "namespace": "io.zeelos.leshan.avro.request",
+                "fields": [
+                  {
+                    "name": "observeSpec",
+                    "type": "string"
+                  }
+                ],
+                "doc" : "Represents a write attributes request."
+              },
+              {
+                "type": "record",
+                "name": "AvroWriteRequest",
+                "namespace": "io.zeelos.leshan.avro.request",
+                "fields": [
+                  {
+                    "name": "mode",
+                    "type": {
+                      "type": "enum",
+                      "name": "AvroWriteRequestMode",
+                      "symbols": [
+                        "REPLACE",
+                        "UPDATE"
+                      ],
+                      "doc" : "Represents the write request mode."
+                    }
+                  },
+                  {
+                    "name": "node",
+                    "type": [
+                      "io.zeelos.leshan.avro.resource.AvroObjectResource",
+                      "io.zeelos.leshan.avro.resource.AvroInstanceResource",
+                      "io.zeelos.leshan.avro.resource.AvroResource"
+                    ]
+                  }
+                ],
+                "doc" : "Represents a write request."
+              }
+            ],
+            "doc" : "Represents the actual request body.",
+            "default": null
+          }
+        ]
+      }
+    }
+  ],
+  "doc": "Represents the management request payload."
+}

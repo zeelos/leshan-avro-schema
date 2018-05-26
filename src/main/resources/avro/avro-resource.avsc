@@ -1,0 +1,33 @@
+{
+  "namespace": "io.zeelos.leshan.avro.resource",
+  "name": "AvroResource",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "path",
+      "type": "string"
+    },
+    {
+      "name": "kind",
+      "type": "io.zeelos.leshan.avro.resource.AvroResourceKind"
+    },
+    {
+      "name": "type",
+      "type": "io.zeelos.leshan.avro.resource.AvroType"
+    },
+    {
+      "name": "value",
+      "type": [
+        "string",
+        "double",
+        "long",
+        "boolean"
+      ]
+    }
+  ],
+  "doc" : "Represents a resource."
+}

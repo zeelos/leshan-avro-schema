@@ -1,0 +1,31 @@
+{
+  "namespace": "io.zeelos.leshan.avro.registration",
+  "type": "record",
+  "name": "AvroRegistrationResponse",
+  "fields": [
+    {
+      "name": "kind",
+      "type": {
+        "type": "enum",
+        "name": "AvroRegistrationKind",
+        "namespace": "io.zeelos.leshan.avro.registration",
+        "symbols": [
+          "NEW",
+          "UPDATE",
+          "DELETE"
+        ],
+        "doc": "Represents the kind of the registration."
+      }
+    },
+    {
+      "name": "body",
+      "type": [
+        "io.zeelos.leshan.avro.registration.AvroRegistrationNew",
+        "io.zeelos.leshan.avro.registration.AvroRegistrationUpdate",
+        "io.zeelos.leshan.avro.registration.AvroRegistrationDelete"
+      ],
+      "doc": "Represents the body of the registration."
+    }
+  ],
+  "doc": "Represents the registration response payload."
+}
