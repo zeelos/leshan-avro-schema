@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.zeelos.leshan.avro</groupId>
     <artifactId>leshan-avro-schema</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>leshan-avro-schema</name>
@@ -27,7 +27,7 @@
 
     <properties>
         <avro.version>1.8.1</avro.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -90,8 +90,8 @@
                 <version>2.5.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <debug>true</debug>
                     <optimize>true</optimize>
                 </configuration>
